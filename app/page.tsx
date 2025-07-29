@@ -13,10 +13,10 @@ function Page() {
   return (
     <div className="grid grid-cols-1 gap-4 min-h-svh">
       {/* this is a navbar */}
-      <div className="sticky top-0 z-10">
+      <div className="sticky top-0 z-10 p-0">
         <NavbarMenu />
       </div>
-      <main className="grid grid-cols-1 gap-2">
+      <main className="grid grid-cols-1 gap-4">
         <div className="border-2 rounded h-[calc(100vh-4rem)]">
           <Home />
         </div>
