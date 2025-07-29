@@ -20,7 +20,7 @@ const NavbarMenu = () => {
     <>
       <Navbar
         shouldHideOnScroll
-        className="px-1 z-40 flex gap-4 w-screen flex-row relative flex-nowrap items-center justify-between h-[var(--navbar-height)] max-w-[1024px]"
+        className="px-1 z-40 flex gap-4  flex-row relative flex-nowrap items-center justify-between h-[var(--navbar-height)] w-full"
       >
         {/* Left: Logo */}
         <NavbarBrand className="flex items-center">
