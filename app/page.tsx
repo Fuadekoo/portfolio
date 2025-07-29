@@ -1,17 +1,44 @@
 "use client";
+import NavbarMenu from "@/components/navbar";
+import Home from "@/components/home";
+import About from "@/components/about";
+import Skills from "@/components/skills";
+import Work from "@/components/work";
+import Testimonial from "@/components/testmonial";
+import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 import React from "react";
 
 function Page() {
   return (
     <div className="grid grid-cols-1 gap-4 min-h-svh">
-      <div className="border-2 rounded sticky top-0 z-10">navbar</div>
-      <div className="border-2 rounded h-[calc(100vh-4rem)]">home</div>
-      <div className="border-2 rounded h-[calc(100vh-4rem)]">about</div>
-      <div className="border-2 rounded h-[calc(100vh-4rem)]">skills</div>
-      <div className="border-2 rounded h-[calc(100vh-4rem)]">work</div>
-      <div className="border-2 rounded h-[calc(100vh-4rem)]">testimonial</div>
-      <div className="border-2 rounded h-[calc(100vh-4rem)]">contact</div>
-      <div className="border-2 rounded">footer</div>
+      {/* this is a navbar */}
+      <div className="sticky top-0 z-10">
+        <NavbarMenu />
+      </div>
+      <main className="grid grid-cols-1 gap-2">
+        <div className="border-2 rounded h-[calc(100vh-4rem)]">
+          <Home />
+        </div>
+        <div className="border-2 rounded h-[calc(100vh-4rem)]">
+          <About />
+        </div>
+        <div className="border-2 rounded h-[calc(100vh-4rem)]">
+          <Skills />
+        </div>
+        <div className="border-2 rounded h-[calc(100vh-4rem)]">
+          <Work />
+        </div>
+        <div className="border-2 rounded h-[calc(100vh-4rem)]">
+          <Testimonial />
+        </div>
+        <div className="border-2 rounded h-[calc(100vh-4rem)]">
+          <Contact />
+        </div>
+      </main>
+      <div className="border-2 rounded">
+        <Footer />
+      </div>
     </div>
   );
 }
