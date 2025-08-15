@@ -1,91 +1,17 @@
+"use client";
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ExternalLink, ChevronRight } from "lucide-react";
+import type { Category, ProjectItem } from "../lib/projects";
+import { PROJECTS } from "../lib/projects";
 
-type Category =
-  | "All Projects"
-  | "Web Development"
-  | "Bot Development"
-  | "Automation";
-
-type ProjectItem = {
-  id: string;
-  title: string;
-  description: string;
-  image: string; // path under /public
-  badge: "Frontend" | "Backend" | "Fullstack";
-  category: Exclude<Category, "All Projects">;
-  href?: string;
-};
-
+// Filters
 const FILTERS: Category[] = [
   "All Projects",
   "Web Development",
   "Bot Development",
   "Automation",
-];
-
-const PROJECTS: ProjectItem[] = [
-  {
-    id: "conversant",
-    title: "Conversant Product Research",
-    description:
-      "An AI-powered shopping assistant that sources and summarizes product research with automation workflows.",
-    image: "/logo.png",
-    badge: "Backend",
-    category: "Automation",
-    href: "#",
-  },
-  {
-    id: "mindcare",
-    title: "Darelkubra mindcare",
-    description:
-      "Platform to discover Ethiopian software engineers, connect with opportunities, and join the growing tech community.",
-    image: "/logo.png",
-    badge: "Backend",
-    category: "Web Development",
-    href: "#",
-  },
-  {
-    id: "infonas",
-    title: "Infonas",
-    description:
-      "Internal automation tools and website for handling VoIP services, billing and customer operations.",
-    image: "/logo.png",
-    badge: "Backend",
-    category: "Automation",
-    href: "#",
-  },
-  {
-    id: "primeCard",
-    title: "PrimeCard",
-    description:
-      "Official website for the Bahrain Film Festival, showcasing films, schedules, and event updates.",
-    image: "/logo.png",
-    badge: "Frontend",
-    category: "Web Development",
-    href: "#",
-  },
-  {
-    id: "terbia",
-    title: "Terbia e-Learning",
-    description:
-      "Comprehensive backend system for managing operations, customers, and workflows.",
-    image: "/logo.png",
-    badge: "Backend",
-    category: "Web Development",
-    href: "#",
-  },
-  {
-    id: "terbia-bot",
-    title: "Terbia TELEGRAM BOT",
-    description:
-      "Official Python SDK for the Chapa Payment Gateway API, maintained and adopted by Chapa.",
-    image: "/logo.png",
-    badge: "Backend",
-    category: "Bot Development",
-    href: "#",
-  },
 ];
 
 function Badge({
@@ -138,25 +64,29 @@ function ProjectCard({ p }: { p: ProjectItem }) {
           <Badge color={badgeColor as any}>{p.badge}</Badge>
         </div>
 
-        <p className="mt-2 text-sm text-gray-600">{p.description}</p>
+        <p className="mt-2 text-sm text-gray-600 line-clamp-3">
+          {p.description}
+        </p>
 
         {/* Footer */}
         <div className="mt-4 flex items-center justify-between">
-          <a
-            href={p.href ?? "#"}
-            className="inline-flex items-center text-sky-700 hover:text-sky-800"
+          <Link
+            href={`/${p.id}`}
+            className="inline-flex items-center text-emerald-700 hover:text-emerald-800"
           >
             View Details <ChevronRight className="ml-1 h-4 w-4" />
-          </a>
-          <a
-            href={p.href ?? "#"}
-            className="text-gray-400 hover:text-gray-600"
-            aria-label="Open project"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <ExternalLink className="h-4 w-4" />
-          </a>
+          </Link>
+          {(p.liveUrl || p.href) && (
+            <a
+              href={p.liveUrl ?? p.href ?? "#"}
+              className="text-gray-400 hover:text-gray-600"
+              aria-label="Open project"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          )}
         </div>
       </div>
     </article>
@@ -172,7 +102,7 @@ function Project() {
   }, [active]);
 
   return (
-    <section className="p-6 sm:p-8">
+    <section className="p-6 sm:p-8" id="projects">
       {/* Header */}
       <div className="text-center">
         <div className="mb-2">

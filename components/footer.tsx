@@ -24,18 +24,6 @@ function Footer() {
           </p>
         </div>
 
-        {/* What I build */}
-        <div>
-          <h4 className="text-sm font-semibold text-white">What I build</h4>
-          <ul className="mt-3 space-y-2 text-sm text-slate-400">
-            <li>• Responsive sites and dashboards</li>
-            <li>• REST/GraphQL backends</li>
-            <li>• Real‑time apps (Socket.IO/WebRTC)</li>
-            <li>• Auth, payments, and integrations</li>
-            <li>• Dockerized, cloud‑ready deployments</li>
-          </ul>
-        </div>
-
         {/* Contact */}
         <div>
           <h4 className="text-sm font-semibold text-white">Contact</h4>
