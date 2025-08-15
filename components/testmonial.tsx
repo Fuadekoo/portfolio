@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useMemo, useState } from "react";
-import Image from "next/image";
-import { ChevronLeft, ChevronRight, Linkedin } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type Testimony = {
   id: string;
@@ -38,46 +37,46 @@ const TESTIMONIALS: Testimony[] = [
   },
 ];
 
-const AUTO_MS = 4500; // change the seconds you want between slides
+const AUTO_MS = 5000;
+
+const initials = (fullName: string) =>
+  fullName
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
 
 function Testimonial() {
   const [index, setIndex] = useState(0);
   const total = TESTIMONIALS.length;
-  const current = useMemo(() => TESTIMONIALS[index], [index]);
 
-  // Auto-play
+  // Auto-play with reset after manual navigation
   useEffect(() => {
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % total);
     }, AUTO_MS);
     return () => clearInterval(id);
-  }, [total]);
+  }, [index, total]);
 
   const goto = (i: number) => setIndex((i + total) % total);
   const next = () => goto(index + 1);
   const prev = () => goto(index - 1);
 
   return (
-    <section className="py-14 px-4">
+    <section className="py-16 px-4">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto">
         <div className="mb-3">
-          <span className="inline-block rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
+          <span className="inline-block rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
             CLIENT FEEDBACK
           </span>
         </div>
-        <h2 className="text-3xl font-bold">Testimonials</h2>
-        <p className="mt-2 text-sm text-gray-600">
-          Here’s what people are saying about my work. Find more reviews on my{" "}
-          <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-sky-600 hover:underline"
-          >
-            LinkedIn profile
-          </a>
-          .
+        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
+          Testimonials
+        </h2>
+        <p className="mt-2 text-sm sm:text-base text-slate-600">
+          What clients say about my work and collaboration.
         </p>
       </div>
 
@@ -91,15 +90,19 @@ function Testimonial() {
           >
             {TESTIMONIALS.map((t) => (
               <div key={t.id} className="min-w-full px-4">
-                <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-6 sm:p-8">
-                  <div className="text-4xl text-slate-800">”</div>
-                  <p className="mt-2 text-slate-700 leading-relaxed">
-                    “{t.quote}”
+                <div className="rounded-2xl border border-gray-200 bg-white/90 shadow-sm p-6 sm:p-8">
+                  <div className="text-5xl leading-none text-emerald-500">
+                    “
+                  </div>
+                  <p className="mt-3 text-base sm:text-lg text-slate-700 leading-relaxed">
+                    {t.quote}
                   </p>
 
                   {/* Author */}
                   <div className="mt-6 flex items-center gap-3">
-                    <div className="relative h-10 w-10 overflow-hidden rounded-full bg-slate-200"></div>
+                    <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold">
+                      {initials(t.name)}
+                    </div>
                     <div className="text-sm">
                       <div className="font-semibold text-slate-900">
                         {t.name}
@@ -121,7 +124,7 @@ function Testimonial() {
           <button
             aria-label="Previous"
             onClick={prev}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-white text-slate-700 hover:bg-gray-50"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-white text-slate-700 hover:bg-gray-50 hover:ring-1 hover:ring-emerald-200"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -135,7 +138,7 @@ function Testimonial() {
                 aria-label={`Go to slide ${i + 1}`}
                 className={[
                   "h-2.5 rounded-full transition-all",
-                  index === i ? "w-5 bg-sky-600" : "w-2.5 bg-gray-300",
+                  index === i ? "w-5 bg-emerald-600" : "w-2.5 bg-gray-300",
                 ].join(" ")}
               />
             ))}
@@ -144,7 +147,7 @@ function Testimonial() {
           <button
             aria-label="Next"
             onClick={next}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-white text-slate-700 hover:bg-gray-50"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-white text-slate-700 hover:bg-gray-50 hover:ring-1 hover:ring-emerald-200"
           >
             <ChevronRight className="h-5 w-5" />
           </button>

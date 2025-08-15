@@ -62,14 +62,14 @@ function Skills() {
       <div className="mx-auto max-w-5xl px-4">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-block rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+          <span className="inline-block rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
             Skills & Tools
           </span>
 
           <h2 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
             The stack I use to ship
             <br className="hidden sm:block" />
-            <span className="text-emerald-600">fast, reliable products</span>
+            <span className="text-sky-600">fast, reliable products</span>
           </h2>
 
           <p className="mt-3 text-sm sm:text-base text-slate-600">
@@ -82,7 +82,7 @@ function Skills() {
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition">
             <div className="flex items-center mb-4">
-              <Code className="w-8 h-8 text-emerald-500 mr-3" />
+              <Code className="w-8 h-8 text-sky-500 mr-3" />
               <h3 className="text-lg font-semibold text-slate-900">
                 Development
               </h3>
@@ -90,7 +90,7 @@ function Skills() {
             <ul className="space-y-2 text-slate-600">
               {skills.development.map((skill) => (
                 <li key={skill} className="flex items-center">
-                  <span className="text-emerald-500 mr-2">›</span> {skill}
+                  <span className="text-sky-500 mr-2">›</span> {skill}
                 </li>
               ))}
             </ul>
@@ -98,13 +98,13 @@ function Skills() {
 
           <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition">
             <div className="flex items-center mb-4">
-              <Paintbrush2 className="w-8 h-8 text-emerald-500 mr-3" />
+              <Paintbrush2 className="w-8 h-8 text-sky-500 mr-3" />
               <h3 className="text-lg font-semibold text-slate-900">Design</h3>
             </div>
             <ul className="space-y-2 text-slate-600">
               {skills.design.map((skill) => (
                 <li key={skill} className="flex items-center">
-                  <span className="text-emerald-500 mr-2">›</span> {skill}
+                  <span className="text-sky-500 mr-2">›</span> {skill}
                 </li>
               ))}
             </ul>
@@ -112,7 +112,7 @@ function Skills() {
 
           <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition">
             <div className="flex items-center mb-4">
-              <Hammer className="w-8 h-8 text-emerald-500 mr-3" />
+              <Hammer className="w-8 h-8 text-sky-500 mr-3" />
               <h3 className="text-lg font-semibold text-slate-900">
                 Tools & Methods
               </h3>
@@ -120,7 +120,7 @@ function Skills() {
             <ul className="space-y-2 text-slate-600">
               {skills.tools.map((skill) => (
                 <li key={skill} className="flex items-center">
-                  <span className="text-emerald-500 mr-2">›</span> {skill}
+                  <span className="text-sky-500 mr-2">›</span> {skill}
                 </li>
               ))}
             </ul>
@@ -152,7 +152,7 @@ function Skills() {
                 {group.items.map((item) => (
                   <div
                     key={item.name}
-                    className="w-24 h-24 rounded-xl border border-gray-200 bg-white/90 shadow-sm hover:shadow-md hover:ring-1 hover:ring-emerald-200 transition flex flex-col items-center justify-center gap-2"
+                    className="w-24 h-24 rounded-xl border border-gray-200 bg-white/90 shadow-sm hover:shadow-md hover:ring-1 hover:ring-sky-200 transition flex flex-col items-center justify-center gap-2"
                     title={item.name}
                   >
                     <img
