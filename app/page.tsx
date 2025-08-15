@@ -3,7 +3,7 @@ import NavbarMenu from "@/components/navbar";
 import Home from "@/components/home";
 import About from "@/components/about";
 import Skills from "@/components/skills";
-import Work from "@/components/work";
+import Project from "@/components/project";
 import Testimonial from "@/components/testmonial";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
@@ -11,34 +11,40 @@ import React from "react";
 
 function Page() {
   return (
-    <div className="grid grid-cols-1 gap-4 min-h-svh">
-      {/* this is a navbar */}
-      <div className="sticky top-0 z-10 p-0">
+    <div className="min-h-dvh flex flex-col">
+      {/* Navbar */}
+      <header className="z-10">
         <NavbarMenu />
-      </div>
-      <main className="grid grid-cols-1 gap-4">
-        <div className="border-2 rounded h-[calc(100vh-4rem)]">
-          <Home />
-        </div>
-        <div className="border-2 rounded h-[calc(100vh-4rem)]">
-          <About />
-        </div>
-        <div className="border-2 rounded h-[calc(100vh-4rem)]">
-          <Skills />
-        </div>
-        <div className="border-2 rounded h-[calc(100vh-4rem)]">
-          <Work />
-        </div>
-        <div className="border-2 rounded h-[calc(100vh-4rem)]">
-          <Testimonial />
-        </div>
-        <div className="border-2 rounded h-[calc(100vh-4rem)]">
-          <Contact />
+      </header>
+
+      {/* Main grows and can scroll if content is tall */}
+      <main className="flex-1 min-h-0">
+        <div className="grid grid-cols-1 gap-4 p-2">
+          <section className="border-2 rounded">
+            <Home />
+          </section>
+          <section className="border-2 rounded">
+            <About />
+          </section>
+          <section className="border-2 rounded">
+            <Skills />
+          </section>
+          <section className="border-2 rounded">
+            <Project />
+          </section>
+          <section className="border-2 rounded">
+            <Testimonial />
+          </section>
+          <section className="border-2 rounded">
+            <Contact />
+          </section>
         </div>
       </main>
-      <div className="border-2 rounded">
+
+      {/* Footer */}
+      <footer className="border-2 rounded">
         <Footer />
-      </div>
+      </footer>
     </div>
   );
 }
