@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { Code, Paintbrush2, Hammer } from "lucide-react";
+import { Code, Paintbrush2, Hammer, Database } from "lucide-react";
 
 const skills = {
   development: ["React", "TypeScript", "Next.js", "Node.js", "GraphQL"],
-  design: ["Figma", "Adobe XD", "Sketch", "UI/UX", "Wireframing"],
+  Database: ["Figma", "Adobe XD", "Sketch", "UI/UX", "Wireframing"],
   tools: ["Git", "Jira", "Agile", "CI/CD", "Testing"],
 };
 
@@ -102,7 +102,7 @@ function Skills() {
               <h3 className="text-lg font-semibold text-slate-900">Design</h3>
             </div>
             <ul className="space-y-2 text-slate-600">
-              {skills.design.map((skill) => (
+              {skills.Database.map((skill) => (
                 <li key={skill} className="flex items-center">
                   <span className="text-sky-500 mr-2">›</span> {skill}
                 </li>

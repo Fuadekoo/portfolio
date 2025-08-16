@@ -15,40 +15,44 @@ const NavbarMenu = () => {
 
   return (
     <>
-      {/* Top bar */}
-      <div className="sticky top-0 z-50 border-b bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      {/* Top bar (Gray brand with subtle success accent) */}
+      <div className="static border-b border-success-600/20 bg-gradient-to-r from-secondary-700/95 via-secondary-800/95 to-secondary-900/95 text-white">
         <div className="mx-auto max-w-6xl px-4 h-[var(--navbar-height,64px)] grid grid-cols-[auto_1fr_auto] items-center">
           {/* Left: Logo */}
           <div className="flex items-center justify-start gap-2">
             <AcmeLogo />
-            <p className="ml-1 font-semibold tracking-wide text-slate-900">
-              FUAD
-            </p>
+            <p className="ml-1 font-semibold tracking-wide">FUAD</p>
           </div>
 
           {/* Center: Links (desktop) */}
-          <nav className="hidden md:flex items-center justify-center gap-6">
+          <nav className="hidden md:flex items-center justify-center gap-7">
+            <Link
+              href="#home"
+              className="relative text-white/90 hover:text-white transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-success after:transition-[width] after:duration-300 hover:after:w-full"
+            >
+              Home
+            </Link>
             <Link
               href="#about"
-              className="text-slate-700 hover:text-emerald-600"
+              className="relative text-white/90 hover:text-white transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-success after:transition-[width] after:duration-300 hover:after:w-full"
             >
               About
             </Link>
             <Link
               href="#skills"
-              className="text-slate-700 hover:text-emerald-600"
+              className="relative text-white/90 hover:text-white transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-success after:transition-[width] after:duration-300 hover:after:w-full"
             >
               Skills
             </Link>
             <Link
               href="#projects"
-              className="text-slate-700 hover:text-emerald-600"
+              className="relative text-white/90 hover:text-white transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-success after:transition-[width] after:duration-300 hover:after:w-full"
             >
               Projects
             </Link>
             <Link
               href="#contact"
-              className="text-slate-700 hover:text-emerald-600"
+              className="relative text-white/90 hover:text-white transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-success after:transition-[width] after:duration-300 hover:after:w-full"
             >
               Contact
             </Link>
@@ -60,24 +64,24 @@ const NavbarMenu = () => {
               isIconOnly
               variant="light"
               aria-label="Toggle theme"
-              className="hidden sm:inline-flex"
+              className="hidden sm:inline-flex text-white/90 hover:text-white"
             >
               🌤️
             </Button>
             <Button
-              color="primary"
+              color="success"
+              variant="solid"
               onPress={scrollToContact}
               className="hidden sm:inline-flex"
             >
               Say Hi
             </Button>
 
-            {/* Mobile menu toggle (always pinned to far right) */}
+            {/* Mobile menu toggle */}
             <Button
               isIconOnly
-              variant="flat"
-              color="primary"
-              className="md:hidden"
+              variant="light"
+              className="md:hidden text-white"
               onPress={() => setSidebar(true)}
               aria-label="Open menu"
             >
@@ -97,8 +101,9 @@ const NavbarMenu = () => {
             onClick={() => setSidebar(false)}
           />
           {/* Panel */}
-          <div className="fixed top-0 right-0 h-dvh w-72 bg-white text-slate-900 shadow-xl z-50 transition-transform duration-300 md:hidden">
-            <div className="flex items-center justify-between px-4 h-[64px] border-b">
+          <div className="fixed top-0 right-0 h-dvh w-72 bg-background text-foreground shadow-xl z-50 transition-transform duration-300 md:hidden flex flex-col">
+            {/* Panel header with gray gradient */}
+            <div className="flex items-center justify-between px-4 h-[64px] border-b bg-gradient-to-r from-secondary-800/95 to-secondary-900/95 text-white">
               <div className="flex items-center gap-2">
                 <AcmeLogo />
                 <span className="font-semibold">FUAD</span>
@@ -111,55 +116,69 @@ const NavbarMenu = () => {
               </button>
             </div>
 
-            <div className="flex flex-col gap-5 p-6">
-              <Link
-                href="#about"
-                onClick={() => setSidebar(false)}
-                className="text-slate-700 hover:text-emerald-600"
-              >
-                About
-              </Link>
-              <Link
-                href="#skills"
-                onClick={() => setSidebar(false)}
-                className="text-slate-700 hover:text-emerald-600"
-              >
-                Skills
-              </Link>
-              <Link
-                href="#projects"
-                onClick={() => setSidebar(false)}
-                className="text-slate-700 hover:text-emerald-600"
-              >
-                Projects
-              </Link>
-              <Link
-                href="#contact"
-                onClick={() => setSidebar(false)}
-                className="text-slate-700 hover:text-emerald-600"
-              >
-                Contact
-              </Link>
+            {/* Nav links with generous spacing */}
+            <div className="flex-1 overflow-y-auto p-6">
+              <div className="flex flex-col gap-3">
+                <Link
+                  href="#home"
+                  onClick={() => setSidebar(false)}
+                  className="block rounded-lg px-3 py-2.5 text-secondary-800 hover:bg-secondary-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-success"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="#about"
+                  onClick={() => setSidebar(false)}
+                  className="block rounded-lg px-3 py-2.5 text-secondary-800 hover:bg-secondary-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-success"
+                >
+                  About
+                </Link>
+                <Link
+                  href="#skills"
+                  onClick={() => setSidebar(false)}
+                  className="block rounded-lg px-3 py-2.5 text-secondary-800 hover:bg-secondary-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-success"
+                >
+                  Skills
+                </Link>
+                <Link
+                  href="#projects"
+                  onClick={() => setSidebar(false)}
+                  className="block rounded-lg px-3 py-2.5 text-secondary-800 hover:bg-secondary-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-success"
+                >
+                  Projects
+                </Link>
+                <Link
+                  href="#contact"
+                  onClick={() => setSidebar(false)}
+                  className="block rounded-lg px-3 py-2.5 text-secondary-800 hover:bg-secondary-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-success"
+                >
+                  Contact
+                </Link>
+              </div>
             </div>
 
-            <div className="mt-auto flex items-center justify-between px-6 py-4 border-t">
-              <Button
-                isIconOnly
-                variant="light"
-                aria-label="Toggle theme"
-                className="hidden sm:inline-flex"
-              >
-                🌤️
-              </Button>
-              <Button
-                color="primary"
-                onPress={() => {
-                  setSidebar(false);
-                  scrollToContact();
-                }}
-              >
-                Say Hi
-              </Button>
+            {/* Bottom actions: sun icon + Say Hi */}
+            <div className="sticky bottom-0 px-4 py-4 border-t bg-secondary-50/90 dark:bg-secondary-900/70 backdrop-blur supports-[backdrop-filter]:bg-secondary-900/60">
+              <div className="flex items-center gap-3">
+                <Button
+                  isIconOnly
+                  variant="flat"
+                  aria-label="Toggle theme"
+                  className="shrink-0"
+                >
+                  🌤️
+                </Button>
+                <Button
+                  color="success"
+                  className="w-full"
+                  onPress={() => {
+                    setSidebar(false);
+                    scrollToContact();
+                  }}
+                >
+                  Say Hi
+                </Button>
+              </div>
             </div>
           </div>
         </>
