@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import { Code, Paintbrush2, Hammer, Database } from "lucide-react";
+import Image from "next/image";
+import { Code, Paintbrush2, Hammer } from "lucide-react";
 
 const skills = {
   development: ["React", "TypeScript", "Next.js", "Node.js", "GraphQL"],
@@ -150,20 +151,22 @@ function Skills() {
               {/* Icon cards grid */}
               <div className="mt-6 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 justify-items-center">
                 {group.items.map((item) => (
-                  <div
+                    <div
                     key={item.name}
                     className="w-24 h-24 rounded-xl border border-gray-200 bg-white/90 shadow-sm hover:shadow-md hover:ring-1 hover:ring-sky-200 transition flex flex-col items-center justify-center gap-2"
                     title={item.name}
-                  >
-                    <img
+                    >
+                    <Image
                       src={item.src}
                       alt={item.name}
+                      width={40}
+                      height={40}
                       className="w-10 h-10 object-contain"
                     />
                     <span className="text-xs text-gray-700 text-center">
                       {item.name}
                     </span>
-                  </div>
+                    </div>
                 ))}
               </div>
             </div>

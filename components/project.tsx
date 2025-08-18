@@ -61,7 +61,7 @@ function ProjectCard({ p }: { p: ProjectItem }) {
       <div className="p-5">
         <div className="flex items-start justify-between gap-3">
           <h3 className="text-base font-semibold text-gray-900">{p.title}</h3>
-          <Badge color={badgeColor as any}>{p.badge}</Badge>
+          <Badge color={badgeColor}>{p.badge}</Badge>
         </div>
 
         <p className="mt-2 text-sm text-gray-600 line-clamp-3">

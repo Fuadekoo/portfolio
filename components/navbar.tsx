@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { Link, Button } from "@heroui/react";
 import { X, AlignRight } from "lucide-react";
 
 export const AcmeLogo = () => (
-  <img src="/logo.svg" alt="Logo" height={40} width={32} />
+  <Image src="/logo.svg" alt="Logo" height={40} width={32} />
 );
 
 const NavbarMenu = () => {

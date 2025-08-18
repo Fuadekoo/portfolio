@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ChevronLeft,
   ChevronRight,
@@ -10,22 +11,35 @@ import {
   Clock,
 } from "lucide-react";
 import { PROJECTS, type ProjectItem } from "@/lib/projects";
+import { useParams } from "next/navigation";
 
-export default function Page({ params }: { params: { projectId: string } }) {
-  const project = PROJECTS.find((p) => p.id === params.projectId) as
+export default function Page() {
+
+  // Hooks must be unconditional
+  const { projectId } = useParams<{ projectId: string }>();
+  const [idx, setIdx] = useState(0);
+
+  const project = PROJECTS.find((p) => p.id === projectId) as
     | ProjectItem
     | undefined;
+  const images = project?.images?.length
+    ? project.images
+    : project?.image
+    ? [project.image]
+    : [];
+
+  useEffect(() => setIdx(0), [project?.id]);
 
   if (!project) {
     return (
       <section className="p-6 sm:p-8">
         <div className="mx-auto max-w-6xl">
-          <a
+          <Link
             href="/#projects"
             className="text-sm text-slate-600 hover:text-emerald-700"
           >
             ← Back to projects
-          </a>
+          </Link>
           <h1 className="mt-6 text-2xl font-bold text-slate-900">
             Project not found
           </h1>
@@ -37,29 +51,20 @@ export default function Page({ params }: { params: { projectId: string } }) {
     );
   }
 
-  const images = project.images?.length
-    ? project.images
-    : project.image
-    ? [project.image]
-    : [];
-  const [idx, setIdx] = useState(0);
-  useEffect(() => setIdx(0), [project.id]);
-
   const prev = () => setIdx((i) => (i - 1 + images.length) % images.length);
   const next = () => setIdx((i) => (i + 1) % images.length);
 
   return (
     <section className="p-6 sm:p-8">
       <div className="mx-auto max-w-6xl">
-        <a
+        <Link
           href="/#projects"
           className="inline-flex items-center text-sm text-slate-600 hover:text-emerald-700"
         >
           ← Back to projects
-        </a>
+        </Link>
 
         <div className="mt-4 grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-6">
-          {/* Left: gallery */}
           <div className="rounded-2xl bg-white p-3 shadow-xl border border-gray-200">
             <div className="relative h-[300px] sm:h-[420px] overflow-hidden rounded-xl border border-gray-200 bg-gray-50">
               {images.length > 0 && (
@@ -120,7 +125,6 @@ export default function Page({ params }: { params: { projectId: string } }) {
             )}
           </div>
 
-          {/* Right: details */}
           <div className="relative rounded-2xl bg-white p-5 shadow-xl border border-gray-200">
             <h1 className="text-2xl font-bold text-slate-900">
               {project.title}

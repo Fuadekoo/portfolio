@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 const year = new Date().getFullYear();
@@ -11,7 +12,7 @@ function Footer() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3">
-            <img src="/logo.svg" alt="Logo" width={32} height={32} />
+            <Image src="/logo.svg" alt="Logo" width={32} height={32} />
             <span className="text-lg font-semibold tracking-wide">Fuad</span>
           </div>
           <p className="mt-3 text-sm text-slate-400">
