@@ -35,7 +35,7 @@ const NavbarMenu = () => {
   return (
     <>
       {/* Top bar */}
-      <div className="static border-b border-success-600/20 bg-gradient-to-r from-secondary-700/95 via-secondary-800/95 to-secondary-900/95 text-white">
+      <div className="static border-b border-success-600/20 bg-white/70 backdrop-blur-lg shadow-lg text-slate-900">
         <div className="mx-auto max-w-6xl px-4 h-[var(--navbar-height,64px)] grid grid-cols-[auto_1fr_auto] items-center">
           {/* Left: Logo */}
           <div className="flex items-center justify-start gap-2">

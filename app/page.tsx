@@ -20,29 +20,29 @@ function Page() {
       {/* Main grows and can scroll if content is tall */}
       <main className="flex-1 min-h-0">
         <div className="grid grid-cols-1 gap-4 p-2">
-          <section className="border-2 rounded">
+          <section className="">
             <Home />
           </section>
-          <section className="border-2 rounded">
+          <section className="">
             <About />
           </section>
-          <section className="border-2 rounded">
+          <section className="">
             <Skills />
           </section>
-          <section className="border-2 rounded">
+          <section className="">
             <Project />
           </section>
-          <section className="border-2 rounded">
+          <section className="">
             <Testimonial />
           </section>
-          <section className="border-2 rounded">
+          <section className="">
             <Contact />
           </section>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="border-2 rounded">
+      <footer className="">
         <Footer />
       </footer>
     </div>
