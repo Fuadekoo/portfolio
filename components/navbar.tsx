@@ -2,11 +2,29 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Link, Button } from "@heroui/react";
-import { X, AlignRight } from "lucide-react";
+import { useTheme } from "next-themes";
+import { X, AlignRight, Sun, Moon } from "lucide-react";
 
 export const AcmeLogo = () => (
   <Image src="/logo.svg" alt="Logo" height={40} width={32} />
 );
+
+// --- Theme Toggle (one icon, toggles light/dark) ---
+const ThemeToggle = () => {
+  const { theme, setTheme } = useTheme();
+  const isDark = theme === "dark";
+  const handleToggle = () => setTheme(isDark ? "light" : "dark");
+
+  return (
+    <button
+      onClick={handleToggle}
+      className="flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium transition-colors bg-secondary-100 dark:bg-secondary-800 text-secondary-600 hover:text-secondary-900 dark:text-secondary-400 dark:hover:text-white"
+      aria-label="Toggle theme"
+    >
+      {isDark ? <Sun className="size-5" /> : <Moon className="size-5" />}
+    </button>
+  );
+};
 
 const NavbarMenu = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -16,7 +34,7 @@ const NavbarMenu = () => {
 
   return (
     <>
-      {/* Top bar (Gray brand with subtle success accent) */}
+      {/* Top bar */}
       <div className="static border-b border-success-600/20 bg-gradient-to-r from-secondary-700/95 via-secondary-800/95 to-secondary-900/95 text-white">
         <div className="mx-auto max-w-6xl px-4 h-[var(--navbar-height,64px)] grid grid-cols-[auto_1fr_auto] items-center">
           {/* Left: Logo */}
@@ -61,14 +79,10 @@ const NavbarMenu = () => {
 
           {/* Right: Theme + Say Hi + Mobile menu */}
           <div className="flex items-center justify-end gap-2">
-            <Button
-              isIconOnly
-              variant="light"
-              aria-label="Toggle theme"
-              className="hidden sm:inline-flex text-white/90 hover:text-white"
-            >
-              🌤️
-            </Button>
+            {/* --- Theme Toggle --- */}
+            <div className="hidden sm:inline-flex">
+              <ThemeToggle />
+            </div>
             <Button
               color="success"
               variant="solid"
@@ -77,8 +91,6 @@ const NavbarMenu = () => {
             >
               Say Hi
             </Button>
-
-            {/* Mobile menu toggle */}
             <Button
               isIconOnly
               variant="light"
@@ -95,19 +107,15 @@ const NavbarMenu = () => {
       {/* Sidebar (mobile) */}
       {sidebar && (
         <>
-          {/* Overlay */}
           <button
             aria-label="Close menu"
             className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
             onClick={() => setSidebar(false)}
           />
-          {/* Panel */}
           <div className="fixed top-0 right-0 h-dvh w-72 bg-background text-foreground shadow-xl z-50 transition-transform duration-300 md:hidden flex flex-col">
-            {/* Panel header with gray gradient */}
             <div className="flex items-center justify-between px-4 h-[64px] border-b bg-gradient-to-r from-secondary-800/95 to-secondary-900/95 text-white">
               <div className="flex items-center gap-2">
-                <AcmeLogo />
-                <span className="font-semibold">FUAD</span>
+                <AcmeLogo /> <span className="font-semibold">FUAD</span>
               </div>
               <button
                 onClick={() => setSidebar(false)}
@@ -116,8 +124,6 @@ const NavbarMenu = () => {
                 <X className="size-6" />
               </button>
             </div>
-
-            {/* Nav links with generous spacing */}
             <div className="flex-1 overflow-y-auto p-6">
               <div className="flex flex-col gap-3">
                 <Link
@@ -157,18 +163,9 @@ const NavbarMenu = () => {
                 </Link>
               </div>
             </div>
-
-            {/* Bottom actions: sun icon + Say Hi */}
-            <div className="sticky bottom-0 px-4 py-4 border-t bg-secondary-50/90 dark:bg-secondary-900/70 backdrop-blur supports-[backdrop-filter]:bg-secondary-900/60">
-              <div className="flex items-center gap-3">
-                <Button
-                  isIconOnly
-                  variant="flat"
-                  aria-label="Toggle theme"
-                  className="shrink-0"
-                >
-                  🌤️
-                </Button>
+            <div className="sticky bottom-0 px-4 py-4 border-t bg-background/80 backdrop-blur">
+              <div className="flex flex-col gap-4">
+                <ThemeToggle />
                 <Button
                   color="success"
                   className="w-full"
