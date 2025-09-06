@@ -14,7 +14,6 @@ import { PROJECTS, type ProjectItem } from "@/lib/projects";
 import { useParams } from "next/navigation";
 
 export default function Page() {
-
   // Hooks must be unconditional
   const { projectId } = useParams<{ projectId: string }>();
   const [idx, setIdx] = useState(0);
@@ -73,7 +72,7 @@ export default function Page() {
                   src={images[idx]}
                   alt={`${project.title} image ${idx + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 768px) 100vw, 60vw"
                   priority
                 />
