@@ -103,8 +103,9 @@ export const PROJECTS: ProjectItem[] = [
     title: "PrimeCard",
     description:
       "Clean marketing site with card management and content sections, optimized for performance and SEO.",
-    image: "/primecard/c0.png",
+    image: "/primecard/card1.png",
     images: [
+      "/primecard/card1.png",
       "/primecard/c1.png",
       "/primecard/c2.png",
       "/primecard/c3.png",
