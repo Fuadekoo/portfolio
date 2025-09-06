@@ -106,6 +106,7 @@ export const PROJECTS: ProjectItem[] = [
     image: "/primecard/card1.png",
     images: [
       "/primecard/card1.png",
+      "/primecard/c0.png",
       "/primecard/c1.png",
       "/primecard/c2.png",
       "/primecard/c3.png",
