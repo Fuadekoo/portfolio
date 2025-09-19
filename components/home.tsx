@@ -80,7 +80,7 @@ function Home() {
               {/* Foreground card */}
               <div className="absolute inset-6 rounded-full bg-background/70 backdrop-blur shadow-lg ring-1 ring-secondary-100 grid place-items-center">
                 <Image
-                  src="/fufu.JPG"
+                  src="/fufu.jpg"
                   alt="Fuad logo"
                   width={260}
                   height={260}
