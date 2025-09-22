@@ -37,11 +37,11 @@ function Contact() {
               Start a conversation
             </a>
             <a
-              href="tel:+251000000000"
+              href="tel:+2519100737199"
               className="inline-flex items-center gap-2 rounded-full border border-blue-300 dark:border-primary-700 bg-white dark:bg-secondary-900 px-5 py-2.5 text-blue-700 dark:text-primary-200 hover:bg-blue-50 dark:hover:bg-secondary-800 transition"
             >
               <Phone className="h-4 w-4 text-blue-600 dark:text-primary-300" />
-              +251 000 000 000
+              +251-910737199
             </a>
           </div>
 
@@ -52,14 +52,14 @@ function Contact() {
               className="inline-flex items-center gap-2 rounded-lg border border-blue-200 dark:border-primary-700 bg-white dark:bg-secondary-900 px-3 py-2 text-sm shadow dark:text-primary-200"
             >
               <Mail className="h-4 w-4 text-blue-600 dark:text-primary-300" />
-              you@example.com
+              fuadabdurahman0859@gmail.com
             </a>
             <a
               href="tel:+251000000000"
               className="inline-flex items-center gap-2 rounded-lg border border-blue-200 dark:border-primary-700 bg-white dark:bg-secondary-900 px-3 py-2 text-sm shadow dark:text-primary-200"
             >
               <Phone className="h-4 w-4 text-blue-600 dark:text-primary-300" />
-              +251 000 000 000
+              +251-910737199
             </a>
           </div>
         </div>
@@ -73,14 +73,14 @@ function Contact() {
             className="inline-flex items-center gap-2 rounded-lg border border-blue-200 dark:border-primary-700 bg-white/90 dark:bg-secondary-900/90 px-3 py-1.5 text-sm text-black dark:text-primary-200 shadow"
           >
             <Phone className="h-4 w-4 text-blue-600 dark:text-primary-300" />
-            +251 000 000 000
+            +251-910737199
           </a>
           <a
-            href="mailto:you@example.com"
+            href="mailto:fuadabdurahman0859@gmail.com"
             className="inline-flex items-center gap-2 rounded-lg border border-blue-200 dark:border-primary-700 bg-white/90 dark:bg-secondary-900/90 px-3 py-1.5 text-sm text-black dark:text-primary-200 shadow"
           >
             <Mail className="h-4 w-4 text-blue-600 dark:text-primary-300" />
-            you@example.com
+            fuadabdurahman0859@gmail.com
           </a>
         </div>
 

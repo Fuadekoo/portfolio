@@ -12,28 +12,28 @@ type Testimony = {
 
 const TESTIMONIALS: Testimony[] = [
   {
-    id: "mohamed",
+    id: "ahmed-yasin",
     quote:
-      "I have worked with Fuad for the past two years. During this time, he proved to be a hard worker with solid problem solving and technical skills. I was always impressed by his ability to complete the work assigned to him on time.",
-    name: "Mohamed Toraif",
-    role: "Head - AWS Cloud",
-    company: "Beyon Solutions",
+      "Fuad is a highly skilled developer who consistently delivers quality work. His expertise in building immersive digital experiences has been invaluable to Melaverse.",
+    name: "Ahmed Yasin",
+    role: "CEO",
+    company: "Melaverse",
   },
   {
-    id: "sara",
+    id: "abdulkarim-ahmed",
     quote:
-      "Fuad delivered beyond expectations. Clear communication, clean code, and reliable timelines. I would definitely work with him again.",
-    name: "Sara Johnson",
-    role: "Product Manager",
-    company: "Infonas",
+      "Working with Fuad has been a great experience. He is proactive, detail-oriented, and always ready to tackle new challenges in our projects.",
+    name: "Abdulkarim Ahmed",
+    role: "Developer",
+    company: "Melaverse",
   },
   {
-    id: "li",
+    id: "mubareh-ahmed",
     quote:
-      "Great attention to detail and UI polish. The handoff and documentation made maintenance simple for our team.",
-    name: "Li Wei",
-    role: "Engineering Lead",
-    company: "EthioDevs",
+      "Fuad brings creativity and technical excellence to every project. His collaborative spirit and problem-solving skills make him a valuable team member.",
+    name: "Mubareh Ahmed",
+    role: "Developer",
+    company: "Melaverse",
   },
 ];
 
