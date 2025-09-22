@@ -82,9 +82,9 @@ function Home() {
                 <Image
                   src="/fufu.jpg"
                   alt="Fuad logo"
-                  width={260}
-                  height={260}
-                  className="object-contain drop-shadow-sm"
+                  fill
+                  className="object-cover drop-shadow-sm rounded-full"
+                  style={{ objectPosition: "center" }}
                   priority
                 />
               </div>
