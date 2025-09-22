@@ -10,12 +10,12 @@ function About() {
       <div className="mx-auto max-w-5xl px-4">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-block rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+          <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
             About me
           </span>
 
-          <h2 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
-            I craft <span className="text-emerald-600">reliable</span> and
+          <h2 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-black">
+            I craft <span className="text-blue-600">reliable</span> and
             <br className="hidden sm:block" /> user‑friendly software.
           </h2>
 
@@ -47,21 +47,19 @@ function About() {
           </div>
 
           {/* Quick facts / chips */}
-          <div className="rounded-2xl border border-gray-200 bg-emerald-50/40 p-6">
-            <h3 className="text-sm font-semibold text-slate-900">
-              Quick facts
-            </h3>
+          <div className="rounded-2xl border border-gray-200 bg-blue-50/40 p-6">
+            <h3 className="text-sm font-semibold text-black">Quick facts</h3>
             <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <li className="rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm text-slate-800">
+              <li className="rounded-lg border border-blue-200 bg-white px-3 py-2 text-sm text-slate-800">
                 • Full‑stack focus (React, Next.js, Node.js)
               </li>
-              <li className="rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm text-slate-800">
+              <li className="rounded-lg border border-blue-200 bg-white px-3 py-2 text-sm text-slate-800">
                 • TypeScript everywhere
               </li>
-              <li className="rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm text-slate-800">
+              <li className="rounded-lg border border-blue-200 bg-white px-3 py-2 text-sm text-slate-800">
                 • Real‑time apps (Socket.IO / WebRTC)
               </li>
-              <li className="rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm text-slate-800">
+              <li className="rounded-lg border border-blue-200 bg-white px-3 py-2 text-sm text-slate-800">
                 • CI/CD & cloud deployments
               </li>
             </ul>

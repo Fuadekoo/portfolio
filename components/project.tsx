@@ -106,12 +106,12 @@ function Project() {
       {/* Header */}
       <div className="text-center">
         <div className="mb-2">
-          <span className="inline-block rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-medium text-sky-700">
+          <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
             MY WORK
           </span>
         </div>
-        <h2 className="text-3xl font-bold text-gray-900">
-          Latest <span className="bg-sky-100 px-2 rounded">Projects</span>
+        <h2 className="text-3xl font-bold text-black">
+          Latest <span className="bg-blue-100 px-2 rounded">Projects</span>
         </h2>
       </div>
 
@@ -126,7 +126,7 @@ function Project() {
               className={[
                 "rounded-full border px-3 py-1.5 text-sm transition",
                 isActive
-                  ? "bg-sky-600 text-white border-sky-600 shadow-sm"
+                  ? "bg-blue-600 text-white border-blue-600 shadow-sm"
                   : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50",
               ].join(" ")}
             >

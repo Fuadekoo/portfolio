@@ -11,15 +11,15 @@ import React from "react";
 
 function Page() {
   return (
-    <div className="min-h-dvh flex flex-col">
+    <div className="h-full flex flex-col w-full overflow-x-hidden">
       {/* Navbar */}
-      <header className="z-10">
+      <header className="sticky top-0 z-20 bg-primary-50/90 backdrop-blur shadow w-full">
         <NavbarMenu />
       </header>
 
       {/* Main grows and can scroll if content is tall */}
-      <main className="flex-1 min-h-0">
-        <div className="grid grid-cols-1 gap-4 p-2">
+      <main className="flex-1 min-h-0 w-full">
+        <div className="grid grid-cols-1 gap-4 p-0 w-full">
           <section className="">
             <Home />
           </section>
@@ -42,7 +42,7 @@ function Page() {
       </main>
 
       {/* Footer */}
-      <footer className="">
+      <footer className="w-full">
         <Footer />
       </footer>
     </div>

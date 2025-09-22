@@ -32,46 +32,60 @@ const NavbarMenu = () => {
   const scrollToContact = () =>
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
 
+  // Prevent body scroll when sidebar is open
+  React.useEffect(() => {
+    if (sidebar) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [sidebar]);
+
   return (
     <>
       {/* Top bar */}
-      <div className="static border-b border-success-600/20 bg-white/70 backdrop-blur-lg shadow-lg text-slate-900">
+      <div className="static border-b border-primary-600/20 bg-primary-50/80 backdrop-blur-lg shadow-lg text-primary-900">
         <div className="mx-auto max-w-6xl px-4 h-[var(--navbar-height,64px)] grid grid-cols-[auto_1fr_auto] items-center">
           {/* Left: Logo */}
           <div className="flex items-center justify-start gap-2">
             <AcmeLogo />
-            <p className="ml-1 font-semibold tracking-wide">FUAD</p>
+            <p className="ml-1 font-semibold tracking-wide text-primary-900">
+              FUAD
+            </p>
           </div>
 
           {/* Center: Links (desktop) */}
           <nav className="hidden md:flex items-center justify-center gap-7">
             <Link
               href="#home"
-              className="relative text-white/90 hover:text-white transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-success after:transition-[width] after:duration-300 hover:after:w-full"
+              className="relative text-primary-900 hover:text-primary-700 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 after:transition-[width] after:duration-300 hover:after:w-full"
             >
               Home
             </Link>
             <Link
               href="#about"
-              className="relative text-white/90 hover:text-white transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-success after:transition-[width] after:duration-300 hover:after:w-full"
+              className="relative text-primary-900 hover:text-primary-700 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 after:transition-[width] after:duration-300 hover:after:w-full"
             >
               About
             </Link>
             <Link
               href="#skills"
-              className="relative text-white/90 hover:text-white transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-success after:transition-[width] after:duration-300 hover:after:w-full"
+              className="relative text-primary-900 hover:text-primary-700 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 after:transition-[width] after:duration-300 hover:after:w-full"
             >
               Skills
             </Link>
             <Link
               href="#projects"
-              className="relative text-white/90 hover:text-white transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-success after:transition-[width] after:duration-300 hover:after:w-full"
+              className="relative text-primary-900 hover:text-primary-700 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 after:transition-[width] after:duration-300 hover:after:w-full"
             >
               Projects
             </Link>
             <Link
               href="#contact"
-              className="relative text-white/90 hover:text-white transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-success after:transition-[width] after:duration-300 hover:after:w-full"
+              className="relative text-primary-900 hover:text-primary-700 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 after:transition-[width] after:duration-300 hover:after:w-full"
             >
               Contact
             </Link>
@@ -84,7 +98,7 @@ const NavbarMenu = () => {
               <ThemeToggle />
             </div>
             <Button
-              color="success"
+              color="primary"
               variant="solid"
               onPress={scrollToContact}
               className="hidden sm:inline-flex"
@@ -94,7 +108,7 @@ const NavbarMenu = () => {
             <Button
               isIconOnly
               variant="light"
-              className="md:hidden text-white"
+              className="md:hidden text-primary-900"
               onPress={() => setSidebar(true)}
               aria-label="Open menu"
             >
@@ -109,65 +123,58 @@ const NavbarMenu = () => {
         <>
           <button
             aria-label="Close menu"
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
+            className="fixed inset-0 bg-secondary-900/40 dark:bg-secondary-900/60 backdrop-blur-sm z-40 md:hidden"
             onClick={() => setSidebar(false)}
           />
-          <div className="fixed top-0 right-0 h-dvh w-72 bg-background text-foreground shadow-xl z-50 transition-transform duration-300 md:hidden flex flex-col">
-            <div className="flex items-center justify-between px-4 h-[64px] border-b bg-gradient-to-r from-secondary-800/95 to-secondary-900/95 text-white">
+          <div
+            className="fixed top-0 right-0 h-dvh w-72 bg-primary-50 dark:bg-secondary-900 text-primary-900 dark:text-secondary-50 shadow-xl z-50 transition-transform duration-300 md:hidden flex flex-col border-l border-primary-200 dark:border-secondary-700 animate-slidein"
+            style={{ transform: "translateX(0)" }}
+          >
+            <div className="flex items-center justify-between px-4 h-[64px] border-b border-primary-200 dark:border-secondary-700 bg-gradient-to-r from-primary-100/95 to-primary-200/95 dark:from-secondary-800/95 dark:to-secondary-900/95 text-primary-900 dark:text-secondary-50">
               <div className="flex items-center gap-2">
                 <AcmeLogo /> <span className="font-semibold">FUAD</span>
               </div>
               <button
                 onClick={() => setSidebar(false)}
                 aria-label="Close sidebar"
+                className="hover:text-primary-600 dark:hover:text-primary-400 transition"
               >
                 <X className="size-6" />
               </button>
             </div>
             <div className="flex-1 overflow-y-auto p-6">
               <div className="flex flex-col gap-3">
-                <Link
-                  href="#home"
-                  onClick={() => setSidebar(false)}
-                  className="block rounded-lg px-3 py-2.5 text-secondary-800 hover:bg-secondary-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-success"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="#about"
-                  onClick={() => setSidebar(false)}
-                  className="block rounded-lg px-3 py-2.5 text-secondary-800 hover:bg-secondary-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-success"
-                >
-                  About
-                </Link>
-                <Link
-                  href="#skills"
-                  onClick={() => setSidebar(false)}
-                  className="block rounded-lg px-3 py-2.5 text-secondary-800 hover:bg-secondary-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-success"
-                >
-                  Skills
-                </Link>
-                <Link
-                  href="#projects"
-                  onClick={() => setSidebar(false)}
-                  className="block rounded-lg px-3 py-2.5 text-secondary-800 hover:bg-secondary-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-success"
-                >
-                  Projects
-                </Link>
-                <Link
-                  href="#contact"
-                  onClick={() => setSidebar(false)}
-                  className="block rounded-lg px-3 py-2.5 text-secondary-800 hover:bg-secondary-50 hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-success"
-                >
-                  Contact
-                </Link>
+                {/* Use an array and map for DRY code */}
+                {(
+                  [
+                    { href: "#home", label: "Home" },
+                    { href: "#about", label: "About" },
+                    { href: "#skills", label: "Skills" },
+                    { href: "#projects", label: "Projects" },
+                    { href: "#contact", label: "Contact" },
+                  ] as const
+                ).map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setSidebar(false)}
+                    className="block rounded-lg px-3 py-2.5 border border-secondary-200 dark:border-secondary-700 text-primary-900 dark:text-secondary-50 bg-transparent transition-all duration-200
+                      hover:border-primary-500 hover:bg-primary-100/60 hover:text-primary-700
+                      dark:hover:border-primary-400 dark:hover:bg-secondary-800/60 dark:hover:text-primary-300
+                      focus:outline-none focus-visible:ring-2 focus-visible:ring-success-400
+                      relative group"
+                  >
+                    <span className="relative z-10">{item.label}</span>
+                    <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-success-500 transition-all duration-300 group-hover:w-full group-focus:w-full" />
+                  </Link>
+                ))}
               </div>
             </div>
-            <div className="sticky bottom-0 px-4 py-4 border-t bg-background/80 backdrop-blur">
+            <div className="sticky bottom-0 px-4 py-4 border-t border-primary-200 dark:border-secondary-700 bg-primary-50/80 dark:bg-secondary-900/80 backdrop-blur">
               <div className="flex flex-col gap-4">
                 <ThemeToggle />
                 <Button
-                  color="success"
+                  color="primary"
                   className="w-full"
                   onPress={() => {
                     setSidebar(false);
@@ -179,6 +186,19 @@ const NavbarMenu = () => {
               </div>
             </div>
           </div>
+          <style jsx global>{`
+            @keyframes slidein {
+              from {
+                transform: translateX(100%);
+              }
+              to {
+                transform: translateX(0);
+              }
+            }
+            .animate-slidein {
+              animation: slidein 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+          `}</style>
         </>
       )}
     </>

@@ -5,20 +5,18 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="relative isolate bg-emerald-50/60 py-16 sm:py-24 rounded-xl"
+      className="relative isolate bg-blue-50/60 py-16 sm:py-24 rounded-xl"
     >
       <div className="mx-auto max-w-5xl px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-block rounded-full border border-emerald-200 bg-white px-3 py-1 text-xs font-semibold text-emerald-700">
+          <span className="inline-block rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-blue-700">
             Let’s talk
           </span>
 
-          <h2 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
+          <h2 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-black">
             Ready to boost your online impact?
             <br />
-            <span className="text-emerald-600">
-              Let’s build something great.
-            </span>
+            <span className="text-blue-600">Let’s build something great.</span>
           </h2>
 
           <p className="mt-3 text-sm sm:text-base text-slate-600">
@@ -29,16 +27,16 @@ function Contact() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <a
               href="mailto:you@example.com"
-              className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-white shadow hover:bg-emerald-700"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-white shadow-lg hover:bg-blue-700 transition"
             >
-              <Mail className="h-4 w-4" />
+              <Mail className="h-4 w-4 text-white" />
               Start a conversation
             </a>
             <a
               href="tel:+251000000000"
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-300 bg-white px-5 py-2.5 text-emerald-700 hover:bg-emerald-50"
+              className="inline-flex items-center gap-2 rounded-full border border-blue-300 bg-white px-5 py-2.5 text-blue-700 hover:bg-blue-50 transition"
             >
-              <Phone className="h-4 w-4" />
+              <Phone className="h-4 w-4 text-blue-600" />
               +251 000 000 000
             </a>
           </div>
@@ -47,16 +45,16 @@ function Contact() {
           <div className="mt-8 grid grid-cols-2 gap-3 md:hidden">
             <a
               href="mailto:you@example.com"
-              className="inline-flex items-center gap-2 rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm"
+              className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white px-3 py-2 text-sm shadow"
             >
-              <Mail className="h-4 w-4 text-emerald-600" />
+              <Mail className="h-4 w-4 text-blue-600" />
               you@example.com
             </a>
             <a
               href="tel:+251000000000"
-              className="inline-flex items-center gap-2 rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm"
+              className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white px-3 py-2 text-sm shadow"
             >
-              <Phone className="h-4 w-4 text-emerald-600" />
+              <Phone className="h-4 w-4 text-blue-600" />
               +251 000 000 000
             </a>
           </div>
@@ -68,16 +66,16 @@ function Contact() {
         <div className="pointer-events-auto flex flex-col gap-2">
           <a
             href="tel:+251000000000"
-            className="inline-flex items-center gap-2 rounded-lg border border-emerald-200 bg-white/90 px-3 py-1.5 text-sm text-slate-800 shadow"
+            className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white/90 px-3 py-1.5 text-sm text-black shadow"
           >
-            <Phone className="h-4 w-4 text-emerald-600" />
+            <Phone className="h-4 w-4 text-blue-600" />
             +251 000 000 000
           </a>
           <a
             href="mailto:you@example.com"
-            className="inline-flex items-center gap-2 rounded-lg border border-emerald-200 bg-white/90 px-3 py-1.5 text-sm text-slate-800 shadow"
+            className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-white/90 px-3 py-1.5 text-sm text-black shadow"
           >
-            <Mail className="h-4 w-4 text-emerald-600" />
+            <Mail className="h-4 w-4 text-blue-600" />
             you@example.com
           </a>
         </div>
@@ -87,7 +85,7 @@ function Contact() {
             href="https://t.me/yourhandle"
             target="_blank"
             rel="noreferrer"
-            className="grid place-items-center rounded-lg border border-emerald-200 bg-white/90 p-2 text-slate-700 hover:text-emerald-700 shadow"
+            className="grid place-items-center rounded-lg border border-blue-200 bg-white/90 p-2 text-blue-700 hover:bg-blue-50 hover:text-blue-800 shadow transition"
           >
             <Send className="h-5 w-5" />
           </a>
@@ -95,7 +93,7 @@ function Contact() {
             href="https://www.linkedin.com/in/yourprofile"
             target="_blank"
             rel="noreferrer"
-            className="grid place-items-center rounded-lg border border-emerald-200 bg-white/90 p-2 text-slate-700 hover:text-emerald-700 shadow"
+            className="grid place-items-center rounded-lg border border-blue-200 bg-white/90 p-2 text-blue-700 hover:bg-blue-50 hover:text-blue-800 shadow transition"
           >
             <Linkedin className="h-5 w-5" />
           </a>
@@ -103,7 +101,7 @@ function Contact() {
             href="https://github.com/youruser"
             target="_blank"
             rel="noreferrer"
-            className="grid place-items-center rounded-lg border border-emerald-200 bg-white/90 p-2 text-slate-700 hover:text-emerald-700 shadow"
+            className="grid place-items-center rounded-lg border border-blue-200 bg-white/90 p-2 text-blue-700 hover:bg-blue-50 hover:text-blue-800 shadow transition"
           >
             <Github className="h-5 w-5" />
           </a>

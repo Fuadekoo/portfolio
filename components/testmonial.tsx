@@ -68,11 +68,11 @@ function Testimonial() {
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto">
         <div className="mb-3">
-          <span className="inline-block rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+          <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
             CLIENT FEEDBACK
           </span>
         </div>
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
+        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black">
           Testimonials
         </h2>
         <p className="mt-2 text-sm sm:text-base text-slate-600">
@@ -91,22 +91,18 @@ function Testimonial() {
             {TESTIMONIALS.map((t) => (
               <div key={t.id} className="min-w-full px-4">
                 <div className="rounded-2xl border border-gray-200 bg-white/90 shadow-sm p-6 sm:p-8">
-                  <div className="text-5xl leading-none text-emerald-500">
-                    “
-                  </div>
+                  <div className="text-5xl leading-none text-blue-500">“</div>
                   <p className="mt-3 text-base sm:text-lg text-slate-700 leading-relaxed">
                     {t.quote}
                   </p>
 
                   {/* Author */}
                   <div className="mt-6 flex items-center gap-3">
-                    <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold">
+                    <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">
                       {initials(t.name)}
                     </div>
                     <div className="text-sm">
-                      <div className="font-semibold text-slate-900">
-                        {t.name}
-                      </div>
+                      <div className="font-semibold text-black">{t.name}</div>
                       <div className="text-slate-600">
                         {t.role}
                         {t.company ? ` • ${t.company}` : ""}
@@ -124,7 +120,7 @@ function Testimonial() {
           <button
             aria-label="Previous"
             onClick={prev}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-white text-slate-700 hover:bg-gray-50 hover:ring-1 hover:ring-emerald-200"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-white text-slate-700 hover:bg-gray-50 hover:ring-1 hover:ring-blue-200"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -138,7 +134,7 @@ function Testimonial() {
                 aria-label={`Go to slide ${i + 1}`}
                 className={[
                   "h-2.5 rounded-full transition-all",
-                  index === i ? "w-5 bg-emerald-600" : "w-2.5 bg-gray-300",
+                  index === i ? "w-5 bg-blue-600" : "w-2.5 bg-gray-300",
                 ].join(" ")}
               />
             ))}
@@ -147,7 +143,7 @@ function Testimonial() {
           <button
             aria-label="Next"
             onClick={next}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-white text-slate-700 hover:bg-gray-50 hover:ring-1 hover:ring-emerald-200"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-white text-slate-700 hover:bg-gray-50 hover:ring-1 hover:ring-blue-200"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
