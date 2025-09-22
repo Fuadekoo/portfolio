@@ -11,9 +11,13 @@ import React from "react";
 
 function Page() {
   return (
-    <div className="h-full flex flex-col w-full overflow-x-hidden">
+    <div className="min-h-dvh flex flex-col w-full overflow-x-hidden">
+      {/* Dark mode background and overlay */}
+      <div className="fixed inset-0 -z-10 h-full w-full bg-white dark:bg-slate-950">
+        <div className="hidden dark:block absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]"></div>
+      </div>
       {/* Navbar */}
-      <header className="sticky top-0 z-20 bg-primary-50/90 backdrop-blur shadow w-full">
+      <header className="sticky top-0 z-20 bg-primary-50/90 dark:bg-slate-950/90 backdrop-blur shadow w-full">
         <NavbarMenu />
       </header>
 

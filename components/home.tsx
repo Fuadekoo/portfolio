@@ -6,9 +6,11 @@ function Home() {
   return (
     <section
       id="home"
-      className="relative isolate overflow-hidden rounded-xl bg-gradient-to-b from-success-50 via-background to-background"
+      className="relative isolate overflow-hidden rounded-xl bg-gradient-to-b from-success-50 via-background to-background dark:bg-slate-950"
     >
-      <div className="mx-auto max-w-6xl px-4">
+      {/* Dark mode overlay */}
+      <div className="hidden dark:block absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)] pointer-events-none z-0"></div>
+      <div className="mx-auto max-w-6xl px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center min-h-[70vh] py-12">
           {/* Left: copy */}
           <div className="order-2 md:order-1">

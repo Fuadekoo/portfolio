@@ -58,9 +58,11 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="relative isolate bg-white py-16 sm:py-24 rounded-xl"
+      className="relative isolate bg-white py-16 sm:py-24 rounded-xl dark:bg-slate-950"
     >
-      <div className="mx-auto max-w-5xl px-4">
+      {/* Dark mode overlay */}
+      <div className="hidden dark:block absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)] pointer-events-none z-0"></div>
+      <div className="mx-auto max-w-5xl px-4 relative z-10">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">

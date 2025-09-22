@@ -61,31 +61,31 @@ const NavbarMenu = () => {
           <nav className="hidden md:flex items-center justify-center gap-7">
             <Link
               href="#home"
-              className="relative text-primary-900 hover:text-primary-700 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 after:transition-[width] after:duration-300 hover:after:w-full"
+              className="relative text-primary-900 dark:text-secondary-50 hover:text-primary-700 dark:hover:text-primary-300 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 dark:after:bg-primary-400 after:transition-[width] after:duration-300 hover:after:w-full"
             >
               Home
             </Link>
             <Link
               href="#about"
-              className="relative text-primary-900 hover:text-primary-700 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 after:transition-[width] after:duration-300 hover:after:w-full"
+              className="relative text-primary-900 dark:text-secondary-50 hover:text-primary-700 dark:hover:text-primary-300 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 dark:after:bg-primary-400 after:transition-[width] after:duration-300 hover:after:w-full"
             >
               About
             </Link>
             <Link
               href="#skills"
-              className="relative text-primary-900 hover:text-primary-700 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 after:transition-[width] after:duration-300 hover:after:w-full"
+              className="relative text-primary-900 dark:text-secondary-50 hover:text-primary-700 dark:hover:text-primary-300 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 dark:after:bg-primary-400 after:transition-[width] after:duration-300 hover:after:w-full"
             >
               Skills
             </Link>
             <Link
               href="#projects"
-              className="relative text-primary-900 hover:text-primary-700 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 after:transition-[width] after:duration-300 hover:after:w-full"
+              className="relative text-primary-900 dark:text-secondary-50 hover:text-primary-700 dark:hover:text-primary-300 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 dark:after:bg-primary-400 after:transition-[width] after:duration-300 hover:after:w-full"
             >
               Projects
             </Link>
             <Link
               href="#contact"
-              className="relative text-primary-900 hover:text-primary-700 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 after:transition-[width] after:duration-300 hover:after:w-full"
+              className="relative text-primary-900 dark:text-secondary-50 hover:text-primary-700 dark:hover:text-primary-300 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 dark:after:bg-primary-400 after:transition-[width] after:duration-300 hover:after:w-full"
             >
               Contact
             </Link>
@@ -165,7 +165,7 @@ const NavbarMenu = () => {
                       relative group"
                   >
                     <span className="relative z-10">{item.label}</span>
-                    <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-success-500 transition-all duration-300 group-hover:w-full group-focus:w-full" />
+                    <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-success-500 dark:bg-success-400 transition-all duration-300 group-hover:w-full group-focus:w-full" />
                   </Link>
                 ))}
               </div>

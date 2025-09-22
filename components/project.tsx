@@ -44,9 +44,9 @@ function ProjectCard({ p }: { p: ProjectItem }) {
       : "blue";
 
   return (
-    <article className="group rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all overflow-hidden">
+    <article className="group rounded-2xl border border-gray-200 dark:border-secondary-700 bg-white dark:bg-secondary-900 shadow-sm hover:shadow-md transition-all overflow-hidden">
       {/* Top preview image */}
-      <div className="relative h-44 w-full overflow-hidden">
+      <div className="relative h-44 w-full overflow-hidden bg-secondary-50 dark:bg-secondary-800">
         <Image
           src={p.image}
           alt={p.title}
@@ -60,11 +60,13 @@ function ProjectCard({ p }: { p: ProjectItem }) {
       {/* Content */}
       <div className="p-5">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="text-base font-semibold text-gray-900">{p.title}</h3>
+          <h3 className="text-base font-semibold text-gray-900 dark:text-secondary-50">
+            {p.title}
+          </h3>
           <Badge color={badgeColor}>{p.badge}</Badge>
         </div>
 
-        <p className="mt-2 text-sm text-gray-600 line-clamp-3">
+        <p className="mt-2 text-sm text-gray-600 dark:text-secondary-300 line-clamp-3">
           {p.description}
         </p>
 
@@ -72,14 +74,14 @@ function ProjectCard({ p }: { p: ProjectItem }) {
         <div className="mt-4 flex items-center justify-between">
           <Link
             href={`/${p.id}`}
-            className="inline-flex items-center text-emerald-700 hover:text-emerald-800"
+            className="inline-flex items-center text-emerald-700 dark:text-success-400 hover:text-emerald-800 dark:hover:text-success-300"
           >
             View Details <ChevronRight className="ml-1 h-4 w-4" />
           </Link>
           {(p.liveUrl || p.href) && (
             <a
               href={p.liveUrl ?? p.href ?? "#"}
-              className="text-gray-400 hover:text-gray-600"
+              className="text-gray-400 dark:text-secondary-400 hover:text-gray-600 dark:hover:text-secondary-200"
               aria-label="Open project"
               target="_blank"
               rel="noreferrer"
@@ -106,12 +108,15 @@ function Project() {
       {/* Header */}
       <div className="text-center">
         <div className="mb-2">
-          <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
+          <span className="inline-block rounded-full border border-blue-200 bg-blue-50 dark:border-primary-700 dark:bg-primary-900 px-3 py-1 text-xs font-medium text-blue-700 dark:text-primary-200">
             MY WORK
           </span>
         </div>
-        <h2 className="text-3xl font-bold text-black">
-          Latest <span className="bg-blue-100 px-2 rounded">Projects</span>
+        <h2 className="text-3xl font-bold text-black dark:text-secondary-50">
+          Latest{" "}
+          <span className="bg-blue-100 dark:bg-primary-800 px-2 rounded dark:text-primary-100">
+            Projects
+          </span>
         </h2>
       </div>
 
@@ -126,8 +131,8 @@ function Project() {
               className={[
                 "rounded-full border px-3 py-1.5 text-sm transition",
                 isActive
-                  ? "bg-blue-600 text-white border-blue-600 shadow-sm"
-                  : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50",
+                  ? "bg-blue-600 text-white border-blue-600 shadow-sm dark:bg-primary-700 dark:border-primary-700"
+                  : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50 dark:bg-secondary-800 dark:text-secondary-200 dark:border-secondary-700 dark:hover:bg-secondary-700",
               ].join(" ")}
             >
               {f}
