@@ -14,16 +14,20 @@ function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center min-h-[70vh] py-12">
           {/* Left: copy */}
           <div className="order-2 md:order-1">
-            <span className="inline-block rounded-full border border-secondary-200 bg-secondary-50 px-3 py-1 text-xs font-semibold text-secondary-700">
+            <h1 className="inline-block rounded-full border border-secondary-200 bg-secondary-50 px-3 py-1 text-xs font-semibold text-secondary-700 dark:border-primary-700 dark:bg-primary-900 dark:text-primary-200">
               Hello, I’m Fuad
-            </span>
-
-            <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground">
-              I build <span className="text-primary">clean</span>,{" "}
-              <span className="text-primary">reliable</span> web apps.
             </h1>
 
-            <p className="mt-3 text-sm sm:text-base leading-relaxed text-secondary-700 max-w-xl">
+            <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground dark:text-white">
+              I build{" "}
+              <span className="text-primary dark:text-primary-300">clean</span>,{" "}
+              <span className="text-primary dark:text-primary-300">
+                reliable
+              </span>{" "}
+              web apps.
+            </h1>
+
+            <p className="mt-3 text-sm sm:text-base leading-relaxed text-secondary-700 dark:text-secondary-200 max-w-xl">
               Full‑stack developer focused on Next.js, Node.js and TypeScript. I
               design crisp UIs, craft robust APIs, and ship fast with automation
               and CI/CD.
@@ -32,29 +36,29 @@ function Home() {
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-white shadow hover:bg-primary-700"
+                className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-white shadow hover:bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-600"
               >
                 View projects
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-full border border-primary bg-transparent px-5 py-2.5 text-primary hover:bg-primary-50"
+                className="inline-flex items-center justify-center rounded-full border border-primary bg-transparent px-5 py-2.5 text-primary hover:bg-primary-50 dark:text-primary-200 dark:border-primary-700 dark:hover:bg-primary-900/40"
               >
                 Contact me
               </a>
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2 text-xs">
-              <span className="rounded-full border border-secondary-200 bg-background px-3 py-1 text-secondary-700">
+              <span className="rounded-full border border-secondary-200 bg-background px-3 py-1 text-secondary-700 dark:border-secondary-700 dark:bg-secondary-900 dark:text-secondary-200">
                 React / Next.js
               </span>
-              <span className="rounded-full border border-secondary-200 bg-background px-3 py-1 text-secondary-700">
+              <span className="rounded-full border border-secondary-200 bg-background px-3 py-1 text-secondary-700 dark:border-secondary-700 dark:bg-secondary-900 dark:text-secondary-200">
                 Node.js / APIs
               </span>
-              <span className="rounded-full border border-secondary-200 bg-background px-3 py-1 text-secondary-700">
+              <span className="rounded-full border border-secondary-200 bg-background px-3 py-1 text-secondary-700 dark:border-secondary-700 dark:bg-secondary-900 dark:text-secondary-200">
                 TypeScript
               </span>
-              <span className="rounded-full border border-secondary-200 bg-background px-3 py-1 text-secondary-700">
+              <span className="rounded-full border border-secondary-200 bg-background px-3 py-1 text-secondary-700 dark:border-secondary-700 dark:bg-secondary-900 dark:text-secondary-200">
                 CI/CD
               </span>
             </div>
