@@ -2,6 +2,7 @@
 import NavbarMenu from "@/components/navbar";
 import Home from "@/components/home";
 import About from "@/components/about";
+import Resume from "@/components/resume";
 import Skills from "@/components/skills";
 import Project from "@/components/project";
 import Testimonial from "@/components/testmonial";
@@ -29,6 +30,9 @@ function Page() {
           </section>
           <section className="">
             <About />
+          </section>
+          <section className="">
+            <Resume />
           </section>
           <section className="">
             <Skills />
