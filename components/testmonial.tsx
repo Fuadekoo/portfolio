@@ -68,14 +68,14 @@ function Testimonial() {
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto">
         <div className="mb-3">
-          <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+          <span className="inline-block rounded-full border border-primary-200 bg-primary-50 dark:border-primary-700 dark:bg-primary-900 px-3 py-1 text-xs font-semibold text-primary-700 dark:text-primary-200">
             CLIENT FEEDBACK
           </span>
         </div>
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black">
+        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary-900 dark:text-white">
           Testimonials
         </h2>
-        <p className="mt-2 text-sm sm:text-base text-slate-600">
+        <p className="mt-2 text-sm sm:text-base text-secondary-700 dark:text-secondary-300">
           What clients say about my work and collaboration.
         </p>
       </div>
@@ -90,20 +90,24 @@ function Testimonial() {
           >
             {TESTIMONIALS.map((t) => (
               <div key={t.id} className="min-w-full px-4">
-                <div className="rounded-2xl border border-gray-200 bg-white/90 shadow-sm p-6 sm:p-8">
-                  <div className="text-5xl leading-none text-blue-500">“</div>
-                  <p className="mt-3 text-base sm:text-lg text-slate-700 leading-relaxed">
+                <div className="rounded-2xl border border-secondary-200 dark:border-secondary-700 bg-white/90 dark:bg-secondary-900/90 shadow-sm p-6 sm:p-8">
+                  <div className="text-5xl leading-none text-primary-500 dark:text-primary-400">
+                    “
+                  </div>
+                  <p className="mt-3 text-base sm:text-lg text-secondary-800 dark:text-secondary-200 leading-relaxed">
                     {t.quote}
                   </p>
 
                   {/* Author */}
                   <div className="mt-6 flex items-center gap-3">
-                    <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">
+                    <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-full bg-primary-100 dark:bg-primary-800 text-primary-700 dark:text-primary-200 text-xs font-semibold">
                       {initials(t.name)}
                     </div>
                     <div className="text-sm">
-                      <div className="font-semibold text-black">{t.name}</div>
-                      <div className="text-slate-600">
+                      <div className="font-semibold text-primary-900 dark:text-white">
+                        {t.name}
+                      </div>
+                      <div className="text-secondary-700 dark:text-secondary-300">
                         {t.role}
                         {t.company ? ` • ${t.company}` : ""}
                       </div>
@@ -120,7 +124,7 @@ function Testimonial() {
           <button
             aria-label="Previous"
             onClick={prev}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-white text-slate-700 hover:bg-gray-50 hover:ring-1 hover:ring-blue-200"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-secondary-300 dark:border-secondary-700 bg-white dark:bg-secondary-800 text-secondary-700 dark:text-secondary-200 hover:bg-secondary-50 dark:hover:bg-secondary-700 hover:ring-1 hover:ring-primary-200 dark:hover:ring-primary-700 transition"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -134,7 +138,9 @@ function Testimonial() {
                 aria-label={`Go to slide ${i + 1}`}
                 className={[
                   "h-2.5 rounded-full transition-all",
-                  index === i ? "w-5 bg-blue-600" : "w-2.5 bg-gray-300",
+                  index === i
+                    ? "w-5 bg-primary-600 dark:bg-primary-400"
+                    : "w-2.5 bg-secondary-300 dark:bg-secondary-700",
                 ].join(" ")}
               />
             ))}
@@ -143,7 +149,7 @@ function Testimonial() {
           <button
             aria-label="Next"
             onClick={next}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-white text-slate-700 hover:bg-gray-50 hover:ring-1 hover:ring-blue-200"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-secondary-300 dark:border-secondary-700 bg-white dark:bg-secondary-800 text-secondary-700 dark:text-secondary-200 hover:bg-secondary-50 dark:hover:bg-secondary-700 hover:ring-1 hover:ring-primary-200 dark:hover:ring-primary-700 transition"
           >
             <ChevronRight className="h-5 w-5" />
           </button>

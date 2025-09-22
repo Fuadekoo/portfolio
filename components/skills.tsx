@@ -65,17 +65,19 @@ function Skills() {
       <div className="mx-auto max-w-5xl px-4 relative z-10">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-block rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+          <span className="inline-block rounded-full border border-blue-200 bg-blue-50 dark:border-primary-700 dark:bg-primary-900 px-3 py-1 text-xs font-semibold text-blue-700 dark:text-primary-200">
             Skills & Tools
           </span>
 
-          <h2 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-black">
+          <h2 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-black dark:text-white">
             The stack I use to ship
             <br className="hidden sm:block" />
-            <span className="text-blue-600">fast, reliable products</span>
+            <span className="text-blue-600 dark:text-primary-300">
+              fast, reliable products
+            </span>
           </h2>
 
-          <p className="mt-3 text-sm sm:text-base text-slate-600">
+          <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-secondary-300">
             A quick snapshot of the technologies I reach for when building
             real‑world apps.
           </p>
@@ -83,45 +85,58 @@ function Skills() {
 
         {/* Summary cards */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition">
+          <div className="bg-white dark:bg-secondary-900 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-secondary-700 hover:shadow-md transition">
             <div className="flex items-center mb-4">
-              <Code className="w-8 h-8 text-blue-500 mr-3" />
-              <h3 className="text-lg font-semibold text-black">Development</h3>
+              <Code className="w-8 h-8 text-blue-500 dark:text-primary-300 mr-3" />
+              <h3 className="text-lg font-semibold text-black dark:text-white">
+                Development
+              </h3>
             </div>
-            <ul className="space-y-2 text-slate-600">
+            <ul className="space-y-2 text-slate-600 dark:text-secondary-200">
               {skills.development.map((skill) => (
                 <li key={skill} className="flex items-center">
-                  <span className="text-blue-500 mr-2">›</span> {skill}
+                  <span className="text-blue-500 dark:text-primary-300 mr-2">
+                    ›
+                  </span>{" "}
+                  {skill}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition">
+          <div className="bg-white dark:bg-secondary-900 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-secondary-700 hover:shadow-md transition">
             <div className="flex items-center mb-4">
-              <Paintbrush2 className="w-8 h-8 text-blue-500 mr-3" />
-              <h3 className="text-lg font-semibold text-black">Design</h3>
+              <Paintbrush2 className="w-8 h-8 text-blue-500 dark:text-primary-300 mr-3" />
+              <h3 className="text-lg font-semibold text-black dark:text-white">
+                Design
+              </h3>
             </div>
-            <ul className="space-y-2 text-slate-600">
+            <ul className="space-y-2 text-slate-600 dark:text-secondary-200">
               {skills.Database.map((skill) => (
                 <li key={skill} className="flex items-center">
-                  <span className="text-blue-500 mr-2">›</span> {skill}
+                  <span className="text-blue-500 dark:text-primary-300 mr-2">
+                    ›
+                  </span>{" "}
+                  {skill}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition">
+          <div className="bg-white dark:bg-secondary-900 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-secondary-700 hover:shadow-md transition">
             <div className="flex items-center mb-4">
-              <Hammer className="w-8 h-8 text-blue-500 mr-3" />
-              <h3 className="text-lg font-semibold text-black">
+              <Hammer className="w-8 h-8 text-blue-500 dark:text-primary-300 mr-3" />
+              <h3 className="text-lg font-semibold text-black dark:text-white">
                 Tools & Methods
               </h3>
             </div>
-            <ul className="space-y-2 text-slate-600">
+            <ul className="space-y-2 text-slate-600 dark:text-secondary-200">
               {skills.tools.map((skill) => (
                 <li key={skill} className="flex items-center">
-                  <span className="text-blue-500 mr-2">›</span> {skill}
+                  <span className="text-blue-500 dark:text-primary-300 mr-2">
+                    ›
+                  </span>{" "}
+                  {skill}
                 </li>
               ))}
             </ul>
@@ -129,7 +144,7 @@ function Skills() {
         </div>
 
         {/* Tech Stack Highlights */}
-        <h3 className="text-2xl font-bold text-center mt-16 mb-8 text-black">
+        <h3 className="text-2xl font-bold text-center mt-16 mb-8 text-black dark:text-white">
           Tech Stack Highlights
         </h3>
 
@@ -137,12 +152,12 @@ function Skills() {
           {STACK_GROUPS.map((group) => (
             <div
               key={group.title}
-              className="rounded-2xl border border-gray-200 bg-white/80 p-5 shadow-sm"
+              className="rounded-2xl border border-gray-200 dark:border-secondary-700 bg-white/80 dark:bg-secondary-900/80 p-5 shadow-sm"
             >
               {/* Pill header */}
               <div className="flex justify-center">
                 <span
-                  className={`inline-block px-4 py-1 rounded-full border text-sm ${group.pillClass}`}
+                  className={`inline-block px-4 py-1 rounded-full border text-sm ${group.pillClass} dark:border-primary-700 dark:bg-primary-900 dark:text-primary-200`}
                 >
                   {group.title}
                 </span>
@@ -153,7 +168,7 @@ function Skills() {
                 {group.items.map((item) => (
                   <div
                     key={item.name}
-                    className="w-24 h-24 rounded-xl border border-gray-200 bg-white/90 shadow-sm hover:shadow-md hover:ring-1 hover:ring-blue-200 transition flex flex-col items-center justify-center gap-2"
+                    className="w-24 h-24 rounded-xl border border-gray-200 dark:border-secondary-700 bg-white/90 dark:bg-secondary-800 shadow-sm hover:shadow-md hover:ring-1 hover:ring-blue-200 dark:hover:ring-primary-700 transition flex flex-col items-center justify-center gap-2"
                     title={item.name}
                   >
                     <Image
@@ -163,7 +178,7 @@ function Skills() {
                       height={40}
                       className="w-10 h-10 object-contain"
                     />
-                    <span className="text-xs text-gray-700 text-center">
+                    <span className="text-xs text-gray-700 dark:text-secondary-200 text-center">
                       {item.name}
                     </span>
                   </div>
