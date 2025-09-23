@@ -89,6 +89,12 @@ const NavbarMenu = () => {
             >
               Contact
             </Link>
+            <Link
+              href="#resume"
+              className="relative text-primary-900 dark:text-secondary-50 hover:text-primary-700 dark:hover:text-primary-300 transition after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary-600 dark:after:bg-primary-400 after:transition-[width] after:duration-300 hover:after:w-full"
+            >
+              Resume
+            </Link>
           </nav>
 
           {/* Right: Theme + Say Hi + Mobile menu */}
@@ -152,6 +158,7 @@ const NavbarMenu = () => {
                     { href: "#skills", label: "Skills" },
                     { href: "#projects", label: "Projects" },
                     { href: "#contact", label: "Contact" },
+                    { href: "/resume", label: "Resume" },
                   ] as const
                 ).map((item) => (
                   <Link
