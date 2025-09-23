@@ -63,6 +63,8 @@ const education = [
     details: [
       "Graduated with distinction.",
       "Active member of the university tech community.",
+      "GPA: 3.67",
+      "Exit exam result: 76",
     ],
   },
   {
