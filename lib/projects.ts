@@ -23,8 +23,8 @@ export type ProjectItem = {
 
 export const PROJECTS: ProjectItem[] = [
   {
-    id: "Primerental",
-    title: "House rentaal and sell web app",
+    id: "PrimeRental",
+    title: "PrimeRental",
     description:
       "A comprehensive platform for property listings, user management, and secure transactions.",
     image: "/primerental/comingsoon.png",
