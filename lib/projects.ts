@@ -141,7 +141,7 @@ export const PROJECTS: ProjectItem[] = [
     category: "Web Development",
     liveUrl: "https://terbia.darelkubra.com/en/student/7914",
     status: "In progress",
-    frontend: ["Next.js", "Tailwind CSS"],
+    frontend: ["Next.js", "Tailwind CSS","shadcn/ui"],
     backend: ["Node.js", "Express", "MySQL"],
     tools: ["Stripe", "JWT Auth"],
   },
