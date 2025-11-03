@@ -233,7 +233,7 @@ export default function Page() {
                   className="inline-flex items-center gap-2 rounded-full bg-primary-600 dark:bg-primary-700 px-4 py-2 text-white hover:bg-primary-700 dark:hover:bg-primary-600"
                 >
                   <Globe className="h-4 w-4" />
-                  Visit site inline
+                  Visit site online
                 </a>
               ) : null}
               {project.repoUrl ? (
