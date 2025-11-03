@@ -139,7 +139,7 @@ export const PROJECTS: ProjectItem[] = [
     ],
     badge: "Fullstack",
     category: "Web Development",
-    liveUrl: "#",
+    liveUrl: "https://terbia.darelkubra.com/en/student/7914",
     status: "In progress",
     frontend: ["Next.js", "Tailwind CSS"],
     backend: ["Node.js", "Express", "MySQL"],
