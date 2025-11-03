@@ -162,7 +162,7 @@ export const PROJECTS: ProjectItem[] = [
     ],
     badge: "Backend",
     category: "Bot Development",
-    repoUrl: `https://t.me/@MubareksBot?startapp=`,
+    liveUrl: `https://t.me/@MubareksBot?startapp=`,
     status: "Live",
     frontend: ["Telegram UI"],
     backend: ["Node.js", "Telegraf", "MySQL", "Grammy"],
