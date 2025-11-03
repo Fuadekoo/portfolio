@@ -140,7 +140,7 @@ export const PROJECTS: ProjectItem[] = [
     badge: "Fullstack",
     category: "Web Development",
     liveUrl: `https://t.me/@MubareksBot?startapp=`,
-    status: "In progress",
+    status: "Live",
     frontend: ["Next.js", "Tailwind CSS", "shadcn/ui"],
     backend: ["Node.js", "Express", "MySQL"],
     tools: ["Stripe", "JWT Auth"],
