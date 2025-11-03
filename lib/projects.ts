@@ -143,7 +143,7 @@ export const PROJECTS: ProjectItem[] = [
     status: "Live",
     frontend: ["Next.js", "Tailwind CSS", "shadcn/ui"],
     backend: ["Node.js", "Express", "MySQL"],
-    tools: ["Stripe", "JWT Auth"],
+    tools: [ "next-auth"],
   },
   {
     id: "terbia-bot",
