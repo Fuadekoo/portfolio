@@ -228,12 +228,12 @@ export default function Page() {
               {project.liveUrl ? (
                 <a
                   href={project.liveUrl}
-                  target="_blank"
+                  // target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-primary-600 dark:bg-primary-700 px-4 py-2 text-white hover:bg-primary-700 dark:hover:bg-primary-600"
                 >
                   <Globe className="h-4 w-4" />
-                  Visit sites
+                  Visit site
                 </a>
               ) : null}
               {project.repoUrl ? (
