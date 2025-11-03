@@ -165,7 +165,7 @@ export const PROJECTS: ProjectItem[] = [
     repoUrl: `https://t.me/@MubareksBot?startapp=`,
     status: "Live",
     frontend: ["Telegram UI"],
-    backend: ["Node.js", "Telegraf", "MongoDB"],
+    backend: ["Node.js", "Telegraf", "MySQL", "Grammy"],
     tools: ["Webhooks", "Docker"],
   },
 ];
