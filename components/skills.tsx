@@ -36,7 +36,7 @@ const STACK_GROUPS = [
       { name: "MySQL", src: "/tecklogo/mysqllogo.png" },
       { name: "PostgreSQL", src: "/tecklogo/postgree.png" },
       { name: "MongoDB", src: "/tecklogo/mongodb.jpg" },
-      { name: "Mongoose", src: "/tecklogo/mongodb.jpg" },
+      { name: "Mongoose", src: "/tecklogo/mongoose.jpg" },
       { name: "JWT", src: "/tecklogo/jwt.png" },
       { name: "Socket.IO", src: "/tecklogo/socket.png" },
     ],
