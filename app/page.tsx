@@ -1,4 +1,4 @@
-"use client";
+import { Metadata } from "next";
 import NavbarMenu from "@/components/navbar";
 import Home from "@/components/home";
 import About from "@/components/about";
@@ -8,9 +8,33 @@ import Project from "@/components/project";
 import Testimonial from "@/components/testmonial";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
-import React from "react";
+import { siteConfig } from "@/lib/site-config";
 
-function Page() {
+export const metadata: Metadata = {
+  title: siteConfig.title,
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.title,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
+
+export default function Page() {
   return (
     <div className="min-h-dvh flex flex-col w-full overflow-x-hidden">
       {/* Dark mode background and overlay */}
@@ -25,25 +49,25 @@ function Page() {
       {/* Main grows and can scroll if content is tall */}
       <main className="flex-1 min-h-0 w-full">
         <div className="grid grid-cols-1 gap-4 p-0 w-full">
-          <section className="">
+          <section id="home" aria-label="Home">
             <Home />
           </section>
-          <section className="">
+          <section id="about" aria-label="About">
             <About />
           </section>
-          <section className="">
+          <section id="resume" aria-label="Resume">
             <Resume />
           </section>
-          <section className="">
+          <section id="skills" aria-label="Skills">
             <Skills />
           </section>
-          <section className="">
+          <section id="projects" aria-label="Projects">
             <Project />
           </section>
-          <section className="">
+          <section id="testimonials" aria-label="Testimonials">
             <Testimonial />
           </section>
-          <section className="">
+          <section id="contact" aria-label="Contact">
             <Contact />
           </section>
         </div>
@@ -56,5 +80,3 @@ function Page() {
     </div>
   );
 }
-
-export default Page;

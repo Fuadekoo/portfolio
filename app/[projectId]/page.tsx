@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { PROJECTS, type ProjectItem } from "@/lib/projects";
 import { useParams } from "next/navigation";
+import { BreadcrumbStructuredData } from "./breadcrumb-data";
 
 export default function Page() {
   // Hooks must be unconditional
@@ -54,14 +55,18 @@ export default function Page() {
   const next = () => setIdx((i) => (i + 1) % images.length);
 
   return (
-    <section className="p-6 sm:p-8">
-      <div className="mx-auto max-w-6xl">
-        <Link
-          href="/#projects"
-          className="inline-flex items-center text-sm text-secondary-600 hover:text-primary-700 dark:text-secondary-300 dark:hover:text-primary-400"
-        >
-          ← Back to projects
-        </Link>
+    <>
+      <BreadcrumbStructuredData />
+      <article className="p-6 sm:p-8" itemScope itemType="https://schema.org/CreativeWork">
+        <div className="mx-auto max-w-6xl">
+        <nav aria-label="Breadcrumb">
+          <Link
+            href="/#projects"
+            className="inline-flex items-center text-sm text-secondary-600 hover:text-primary-700 dark:text-secondary-300 dark:hover:text-primary-400"
+          >
+            ← Back to projects
+          </Link>
+        </nav>
 
         <div className="mt-4 grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-6">
           <div className="rounded-2xl bg-white dark:bg-secondary-900 p-3 shadow-xl border border-secondary-200 dark:border-secondary-700">
@@ -149,10 +154,10 @@ export default function Page() {
           </div>
 
           <div className="relative rounded-2xl bg-white dark:bg-secondary-900 p-5 shadow-xl border border-secondary-200 dark:border-secondary-700">
-            <h1 className="text-2xl font-bold text-secondary-900 dark:text-secondary-50">
+            <h1 className="text-2xl font-bold text-secondary-900 dark:text-secondary-50" itemProp="name">
               {project.title}
             </h1>
-            <p className="mt-2 text-sm text-secondary-600 dark:text-secondary-300">
+            <p className="mt-2 text-sm text-secondary-600 dark:text-secondary-300" itemProp="description">
               {project.description}
             </p>
 
@@ -251,6 +256,7 @@ export default function Page() {
           </div>
         </div>
       </div>
-    </section>
+    </article>
+    </>
   );
 }
