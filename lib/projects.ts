@@ -23,6 +23,33 @@ export type ProjectItem = {
 
 export const PROJECTS: ProjectItem[] = [
   {
+    id: "melaschools",
+    title: "MelaSchools",
+    description:
+      "Production multi-tenant SaaS school management platform serving 10+ schools. Handles multi-branch operations, admissions, attendance, exams and grading, transcripts and report cards, printable student ID cards with QR verification, fee collection, payroll and staff performance, guardian messaging, and an AI assistant for school-wide insights — all behind role-based access for admins, managers, staff, students, and guardians.",
+    image: "/melaschools/m2.png",
+    images: [
+      "/melaschools/m2.png",
+      "/melaschools/m3.png",
+      "/melaschools/m1.png",
+    ],
+    badge: "Fullstack",
+    category: "Web Development",
+    liveUrl: "#",
+    status: "Live",
+    frontend: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+    backend: ["Node.js", "Next.js", "Prisma", "MySQL"],
+    tools: [
+      "Multi-tenant SaaS",
+      "RBAC",
+      "Subscriptions",
+      "AI Assistant",
+      "Chapa",
+      "VPS server",
+      "CI/CD",
+    ],
+  },
+  {
     id: "PrimeRental",
     title: "PrimeRental",
     description:
